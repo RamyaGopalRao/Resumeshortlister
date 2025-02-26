@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Resume Shortlister{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Resume Shortlister</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'resume_list' %}" class="button">Resume List</a></li>
+                <li><a href="{% url 'add_skill' %}" class="button">Add Skill</a></li>
+                <li><a href="{% url 'add_job_listing' %}" class="button">Add Job Listing</a></li>
+                <li><a href="{% url 'job_listing_success' %}" class="button">Add Education</a></li>
+                <li><a href="{% url 'shortlist_jobs' %}" class="button">Shortlist Jobs</a></li>
+                <li><a href="{% url 'upload' %}" class="button">Upload Resume</a></li>
+                <li><a href="{% url 'shortlist_resumes' %}" class="button">Shortlist Resumes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Resume Shortlister</p>
+    </footer>
+</body>
+</html>
